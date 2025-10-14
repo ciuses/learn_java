@@ -1,4 +1,4 @@
-package access_layer;
+package ru.ciuse.hw_2_java_db.access_layer;
 
 public interface accessToDB<T, ID, P> {
     void create(T entity);

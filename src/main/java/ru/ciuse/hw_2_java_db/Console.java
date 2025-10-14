@@ -1,7 +1,7 @@
 package ru.ciuse.hw_2_java_db;
 
-import entity.Gem;
-import logic.GemServiceImpl;
+import ru.ciuse.hw_2_java_db.entity.Gem;
+import ru.ciuse.hw_2_java_db.logic.GemServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +13,7 @@ import java.util.Scanner;
 @Configuration
 public class Console {
 
-    @Autowired
+//    @Autowired
     public CommandProcessor commandProcessor;
 
     @Bean
@@ -44,7 +44,7 @@ public class Console {
         private final GemServiceImpl GemServiceImpl;
 
         @Autowired
-        public CommandProcessor(GemServiceImpl GemServiceImpl) {
+        public CommandProcessor (GemServiceImpl GemServiceImpl) {
             this.GemServiceImpl = GemServiceImpl;
         }
 

@@ -1,6 +1,6 @@
-package logic;
+package ru.ciuse.hw_2_java_db.logic;
 
-import entity.Gem;
+import ru.ciuse.hw_2_java_db.entity.Gem;
 
 public interface gemService {
     void createGem (Long gemId, String gemType, String gemName, Integer gemPrice);

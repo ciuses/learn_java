@@ -1,8 +1,8 @@
-package logic;
+package ru.ciuse.hw_2_java_db.logic;
 
 
-import access_layer.workWithDB;
-import entity.Gem;
+import ru.ciuse.hw_2_java_db.access_layer.workWithDB;
+import ru.ciuse.hw_2_java_db.entity.Gem;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,6 +1,6 @@
-package access_layer;
+package ru.ciuse.hw_2_java_db.access_layer;
 
-import entity.Gem;
+import ru.ciuse.hw_2_java_db.entity.Gem;
 import java.util.List;
 import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;

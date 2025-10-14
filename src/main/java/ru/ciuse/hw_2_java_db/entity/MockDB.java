@@ -1,4 +1,4 @@
-package entity;
+package ru.ciuse.hw_2_java_db.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ public class MockDB {
 
     @Bean
     @Scope(value = BeanDefinition.SCOPE_SINGLETON)
-    public List<entity.Gem> gemContainer() {
+    public List<Gem> gemContainer() {
         return new ArrayList<>();
     }
 }

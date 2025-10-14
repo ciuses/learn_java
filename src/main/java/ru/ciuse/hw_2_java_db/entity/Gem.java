@@ -1,4 +1,4 @@
-package entity;
+package ru.ciuse.hw_2_java_db.entity;
 
 public class Gem {
     private Long gemId;
