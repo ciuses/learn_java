@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class workWithDB implements accessToDB<Gem, Long, Integer> {
+public class WorkWithDB implements AccessToDB<Gem, Long, Integer> {
     private final List<Gem> gemContainer;
 
     @Autowired
-    public workWithDB(List<Gem> gemContainer) {
+    public WorkWithDB(List<Gem> gemContainer) {
         this.gemContainer = gemContainer;
     }
 

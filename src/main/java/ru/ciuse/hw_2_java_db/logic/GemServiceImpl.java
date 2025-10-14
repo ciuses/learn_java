@@ -1,19 +1,19 @@
 package ru.ciuse.hw_2_java_db.logic;
 
 
-import ru.ciuse.hw_2_java_db.access_layer.workWithDB;
+import ru.ciuse.hw_2_java_db.access_layer.WorkWithDB;
 import ru.ciuse.hw_2_java_db.entity.Gem;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
 @Service
-public class GemServiceImpl implements gemService {
+public class GemServiceImpl implements GemService {
 
-    private final workWithDB workWithDB;
+    private final WorkWithDB workWithDB;
 
     @Autowired
-    public GemServiceImpl (workWithDB workWithDB) {
+    public GemServiceImpl (WorkWithDB workWithDB) {
         this.workWithDB = workWithDB;
 
     }
