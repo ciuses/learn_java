@@ -1,6 +1,7 @@
 package ru.ciuse.hw_2_java_db;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Scope;
 import ru.ciuse.hw_2_java_db.entity.Gem;
 import ru.ciuse.hw_2_java_db.logic.GemService;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Component;
 import java.util.Scanner;
 
 @Configuration
+@ComponentScan(basePackages = "ru.ciuse.hw_2_java_db")
 public class Console {
 
     @Autowired
@@ -52,6 +54,7 @@ public class Console {
             this.gemService = gemService;
         }
 
+        @Bean
         public void processCommand(String input) {
             String[] cmd = input.split(" ");
             switch (cmd[0]) {
