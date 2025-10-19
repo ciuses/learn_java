@@ -11,7 +11,7 @@
 	<groupId>ru.ciuse</groupId>
 	<artifactId>hw_2_java_db</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hw_2_java_db</name>
+	<name>hw_4_orm</name>
 	<description>Project for Naumen Java course</description>
 	<url/>
 	<licenses>
