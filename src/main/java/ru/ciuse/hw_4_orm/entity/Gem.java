@@ -21,8 +21,6 @@ public class Gem {
     @OneToOne
     private Occurrence occurrence;
 
-//    @ManyToMany
-//    private Auction auction;
 
     public Gem() {
     }
@@ -71,13 +69,6 @@ public class Gem {
         this.occurrence = occurrence;
     }
 
-//    public Auction getAuction() {
-//        return auction;
-//    }
-//
-//    public void setAuction(Auction auction) {
-//        this.auction = auction;
-//    }
 
     @Override
     public String toString() {

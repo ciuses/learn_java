@@ -15,6 +15,9 @@ public class Auction {
     String city;
     String date;
 
+    @ManyToOne
+    private Gem gem;
+
 
     public Auction() {
     }
@@ -45,6 +48,14 @@ public class Auction {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public Gem getGem() {
+        return gem;
+    }
+
+    public void setGem(Gem gem) {
+        this.gem = gem;
     }
 
     @Override
