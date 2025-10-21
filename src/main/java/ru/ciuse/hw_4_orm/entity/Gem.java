@@ -13,13 +13,13 @@ public class Gem {
 
     String name;
     String type;
-    Double price;
+//    Double price;
 
-    @OneToOne
-    private Owner owner;
+    @OneToOne(cascade = CascadeType.MERGE)
+    Owner owner;
 
-    @OneToOne
-    private Occurrence occurrence;
+    @OneToOne(cascade = CascadeType.MERGE)
+    Occurrence occurrence;
 
 
     public Gem() {
@@ -45,13 +45,13 @@ public class Gem {
         this.type = type;
     }
 
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
+//    public Double getPrice() {
+//        return price;
+//    }
+//
+//    public void setPrice(Double price) {
+//        this.price = price;
+//    }
 
     public Owner getOwner() {
         return owner;
@@ -70,16 +70,27 @@ public class Gem {
     }
 
 
+//    @Override
+//    public String toString() {
+//        return "Gem{" +
+//                "gem_id=" + gem_id +
+//                ", name='" + name + '\'' +
+//                ", type='" + type + '\'' +
+//                ", price=" + price +
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
         return "Gem{" +
                 "gem_id=" + gem_id +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
-                ", price=" + price +
+                ", owner=" + owner +
+                ", occurrence=" + occurrence +
                 '}';
     }
-
 }
 
 

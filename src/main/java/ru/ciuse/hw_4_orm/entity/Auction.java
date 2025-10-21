@@ -15,8 +15,8 @@ public class Auction {
     String city;
     String date;
 
-    @ManyToOne
-    private Gem gem;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    Gem gem;
 
 
     public Auction() {

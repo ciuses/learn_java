@@ -14,8 +14,8 @@ public class Price {
     Integer final_price;
     String currency;
 
-    @ManyToOne
-    private Gem gem;
+    @ManyToOne(cascade = CascadeType.ALL)
+    Gem gem;
 
     public Price() {
     }
