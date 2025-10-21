@@ -14,6 +14,9 @@ public class Price {
     Integer final_price;
     String currency;
 
+    @ManyToOne
+    private Gem gem;
+
     public Price() {
     }
 
@@ -43,6 +46,14 @@ public class Price {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public Gem getGem() {
+        return gem;
+    }
+
+    public void setGem(Gem gem) {
+        this.gem = gem;
     }
 
     @Override

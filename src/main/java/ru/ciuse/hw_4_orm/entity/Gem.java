@@ -15,6 +15,14 @@ public class Gem {
     String type;
     Double price;
 
+    @OneToOne
+    private Owner owner;
+
+    @OneToOne
+    private Occurrence occurrence;
+
+//    @ManyToMany
+//    private Auction auction;
 
     public Gem() {
     }
@@ -47,6 +55,30 @@ public class Gem {
         this.price = price;
     }
 
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
+    public Occurrence getOccurrence() {
+        return occurrence;
+    }
+
+    public void setOccurrence(Occurrence occurrence) {
+        this.occurrence = occurrence;
+    }
+
+//    public Auction getAuction() {
+//        return auction;
+//    }
+//
+//    public void setAuction(Auction auction) {
+//        this.auction = auction;
+//    }
+
     @Override
     public String toString() {
         return "Gem{" +
@@ -57,21 +89,6 @@ public class Gem {
                 '}';
     }
 
-    //    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "Gem{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                '}';
-//    }
 }
 
 

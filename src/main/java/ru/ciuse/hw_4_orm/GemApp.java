@@ -9,3 +9,6 @@ public class GemApp {
         SpringApplication.run(GemApp.class, args);
     }
 }
+
+
+//https://javarush.com/groups/posts/2259-jpa--znakomstvo-s-tekhnologiey
