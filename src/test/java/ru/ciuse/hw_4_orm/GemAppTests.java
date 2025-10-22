@@ -167,15 +167,31 @@ class GemAppTests {
 //    }
 
 
+//    @Test
+//    @Transactional
+//    void selectCountry() {
+//
+//        List<Occurrence> myCountry = occurrenceCRUDRepo.findByCountry("Россия");
+//        System.out.println(myCountry);
+//
+//        List<Occurrence> myCountry2 = occurrenceCRUDRepo.findByMyCustomDate("2000");
+//        System.out.println(myCountry2);
+//
+//
+//
+//    }
+
     @Test
     @Transactional
-    void selectCountry() {
+    void selectCriteria() {
 
-        List<Occurrence> myCountry = occurrenceCRUDRepo.findByCountry("Россия");
-        System.out.println(myCountry);
+        AucRepoImpl meGet = new AucRepoImpl();
 
-        List<Occurrence> myCountry2 = occurrenceCRUDRepo.findByMyCustomDate("2000");
-        System.out.println(myCountry2);
+//        List myList = meGet.findByCity("Нью Йорк");
+//        System.out.println(myList);
+
+
+
 
 
 
