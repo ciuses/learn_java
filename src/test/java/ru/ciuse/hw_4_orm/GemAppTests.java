@@ -3,8 +3,11 @@ package ru.ciuse.hw_4_orm;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 import ru.ciuse.hw_4_orm.entity.*;
 import ru.ciuse.hw_4_orm.my_repo.*;
+
+import java.util.List;
 
 @SpringBootTest
 class GemAppTests {
@@ -24,6 +27,9 @@ class GemAppTests {
     OwnerInterface ownerInterface;
     @Autowired
     PriceInterface priceInterface;
+
+    @Autowired
+    OccurrenceCRUDRepo occurrenceCRUDRepo;
 
 //    @Test
 //    void addGems() {
@@ -71,68 +77,107 @@ class GemAppTests {
 //
 //    }
 
-    @Test
-    void gemExperements() {
-//        Gem myGem = new Gem("Сапфир Бомбея");
-//        Occurrence ground = new Occurrence("Шри-Ланка");
-//        Owner myOwner = new Owner("Елизавета II");
-//        Price myPrice = new Price(100000000);
-//        Auction myAuc = new Auction("Солсбери");
+//    @Test
+//    void gemExperements() {
+////        Gem myGem = new Gem("Сапфир Бомбея");
+////        Occurrence ground = new Occurrence("Шри-Ланка");
+////        Owner myOwner = new Owner("Елизавета II");
+////        Price myPrice = new Price(100000000);
+////        Auction myAuc = new Auction("Солсбери");
+////
+////        ground.setDate("01.01.1987");
+////        ground.setPlace("Деревня");
+////
+////        myOwner.setCity("Лондон");
+////        myOwner.setContact("+79610865432");
+////
+////        myPrice.setFinal_price(1000000000);
+////        myPrice.setCurrency("USD");
+////
+////        myAuc.setCity("Нью Йорк");
+////        myAuc.setDate("01.11.2025");
+////
+////        myGem.setType("Чистый Сапфир");
+////        myGem.setOwner(myOwner);
+////        myGem.setOccurrence(ground);
+////
+////        myPrice.setGem(myGem);
+////
+////        myAuc.setGem(myGem);
 //
-//        ground.setDate("01.01.1987");
-//        ground.setPlace("Деревня");
 //
-//        myOwner.setCity("Лондон");
-//        myOwner.setContact("+79610865432");
+//        Gem myGem = new Gem("Янтарь");
+//        Occurrence ground = new Occurrence("Эстония");
+//        Owner myOwner = new Owner("Калис");
+//        Price myPrice = new Price(50);
+//        Auction myAuc = new Auction("Московская биржа");
 //
-//        myPrice.setFinal_price(1000000000);
-//        myPrice.setCurrency("USD");
+//        ground.setDate("24.05.2014");
+//        ground.setPlace("Рига");
 //
-//        myAuc.setCity("Нью Йорк");
-//        myAuc.setDate("01.11.2025");
+//        myOwner.setCity("Серпухово");
+//        myOwner.setContact("+34507132211");
 //
-//        myGem.setType("Чистый Сапфир");
+//        myPrice.setFinal_price(100);
+//        myPrice.setCurrency("TG");
+//
+//        myAuc.setCity("Дублин");
+//        myAuc.setDate("03.02.2026");
+//
+//        myGem.setType("Там ДНК");
 //        myGem.setOwner(myOwner);
 //        myGem.setOccurrence(ground);
 //
 //        myPrice.setGem(myGem);
 //
 //        myAuc.setGem(myGem);
+//
+//
+//
+//        occurrenceInterface.saveAndFlush(ground);
+//        ownerInterface.saveAndFlush(myOwner);
+//        priceInterface.saveAndFlush(myPrice);
+//        auctionInterface.saveAndFlush(myAuc);
+//        gemInterface.saveAndFlush(myGem);
+//
+//    }
+
+//    @Test
+//    @Transactional
+//    void mySelect() {
+//        Gem any_gem = gemInterface.getReferenceById(3);
+//        List<Gem> gemList = gemInterface.findAll();
+//        System.out.println(any_gem);
+//        System.out.println(any_gem.getName());
+//        System.out.println(any_gem.getOccurrence());
+//        System.out.println(gemList);
+//
+//    }
+
+//    @Test
+//    @Transactional
+//    void selectMinPrice() {
+//
+//        List<Price> anyPrices = priceInterface.findByStarting(50);
+//        System.out.println(anyPrices);
+//
+//        List<Price> anotherPrices = priceInterface.findByStartingOrCurrency(50, "USD");
+//        System.out.println(anotherPrices);
+//
+//    }
 
 
-        Gem myGem = new Gem("Янтарь");
-        Occurrence ground = new Occurrence("Эстония");
-        Owner myOwner = new Owner("Калис");
-        Price myPrice = new Price(50);
-        Auction myAuc = new Auction("Московская биржа");
+    @Test
+    @Transactional
+    void selectCountry() {
 
-        ground.setDate("24.05.2014");
-        ground.setPlace("Рига");
+        List<Occurrence> myCountry = occurrenceCRUDRepo.findByCountry("Россия");
+        System.out.println(myCountry);
 
-        myOwner.setCity("Серпухово");
-        myOwner.setContact("+34507132211");
-
-        myPrice.setFinal_price(100);
-        myPrice.setCurrency("TG");
-
-        myAuc.setCity("Дублин");
-        myAuc.setDate("03.02.2026");
-
-        myGem.setType("Там ДНК");
-        myGem.setOwner(myOwner);
-        myGem.setOccurrence(ground);
-
-        myPrice.setGem(myGem);
-
-        myAuc.setGem(myGem);
+        List<Occurrence> myCountry2 = occurrenceCRUDRepo.findByMyCustomDate("2000");
+        System.out.println(myCountry2);
 
 
-
-        occurrenceInterface.saveAndFlush(ground);
-        ownerInterface.saveAndFlush(myOwner);
-        priceInterface.saveAndFlush(myPrice);
-        auctionInterface.saveAndFlush(myAuc);
-        gemInterface.saveAndFlush(myGem);
 
     }
 
