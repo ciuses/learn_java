@@ -1,5 +1,13 @@
 package ru.ciuse.hw_4_orm;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -185,10 +193,28 @@ class GemAppTests {
     @Transactional
     void selectCriteria() {
 
-        AucRepoImpl meGet = new AucRepoImpl();
+//        AucRepoImpl meGet = new AucRepoImpl();
 
 //        List myList = meGet.findByCity("Нью Йорк");
 //        System.out.println(myList);
+
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("hw_2_java_db");
+        EntityManager em = factory.createEntityManager();
+
+//        @PersistenceContext
+//        private EntityManager entityManager;
+
+        CriteriaBuilder myCritBild = em.getCriteriaBuilder();
+        CriteriaQuery<Auction> myCritQ = myCritBild.createQuery(Auction.class);
+
+        Root<Auction> aucRoot = myCritQ.from(Auction.class);
+        Predicate cityPredict = myCritBild.equal(aucRoot.get("city"), "Нью Йорк");
+
+        myCritQ.select(aucRoot).where(cityPredict);
+
+        List myList =  em.createQuery(myCritQ).getResultList();
+        System.out.println(myList);
+
 
 
 
