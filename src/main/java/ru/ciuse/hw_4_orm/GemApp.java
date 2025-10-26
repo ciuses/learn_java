@@ -11,4 +11,4 @@ public class GemApp {
 }
 
 
-//https://javarush.com/groups/posts/2259-jpa--znakomstvo-s-tekhnologiey
+//https://javarush.com/groups59-jp/posts/22a--znakomstvo-s-tekhnologiey
