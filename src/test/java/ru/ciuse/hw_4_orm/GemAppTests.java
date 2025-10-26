@@ -150,17 +150,17 @@ class GemAppTests {
 //
 //    }
 
-//    @Test
-//    @Transactional
-//    void mySelect() {
-//        Gem any_gem = gemInterface.getReferenceById(3);
-//        List<Gem> gemList = gemInterface.findAll();
-//        System.out.println(any_gem);
-//        System.out.println(any_gem.getName());
-//        System.out.println(any_gem.getOccurrence());
-//        System.out.println(gemList);
-//
-//    }
+    @Test
+    @Transactional
+    void mySelect() {
+        Gem any_gem = gemInterface.getReferenceById(3);
+        List<Gem> gemList = gemInterface.findAll();
+        System.out.println(any_gem);
+        System.out.println(any_gem.getName());
+        System.out.println(any_gem.getOccurrence());
+        System.out.println(gemList);
+
+    }
 
 //    @Test
 //    @Transactional
