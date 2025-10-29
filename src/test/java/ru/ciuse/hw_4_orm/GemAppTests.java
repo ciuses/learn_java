@@ -159,7 +159,6 @@ class GemAppTests {
         System.out.println(any_gem.getName());
         System.out.println(any_gem.getOccurrence());
         System.out.println(gemList);
-
     }
 
 //    @Test

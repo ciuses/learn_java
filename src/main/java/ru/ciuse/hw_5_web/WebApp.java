@@ -10,14 +10,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication(scanBasePackages = {"hw_5_web", "hw_4_orm"})
+@SpringBootApplication()
 public class WebApp {
     public static void main(String[] args) {
         SpringApplication.run(WebApp.class, args);
     }
 
     @Bean
-    public OpenAPI customOpenAPI(@Value("@project.version@") String appVersion) {
+    public OpenAPI customOpenAPI(@Value("${project.version}") String appVersion) {
         return new OpenAPI()
                 .components(new Components())
                 .info(new Info()
