@@ -1,0 +1,69 @@
+package ru.ciuse.hw_5_web.model;
+
+import jakarta.persistence.*;
+
+
+@Entity
+@Table(name = "tbl_Price")
+public class Price {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Integer price_id;
+
+    Integer starting;
+    Integer final_price;
+    String currency;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    Gem gem;
+
+    public Price() {
+    }
+
+    public Price(Integer starting) {
+        this.starting = starting;
+    }
+
+    public Integer getStarting() {
+        return starting;
+    }
+
+    public void setStarting(Integer starting) {
+        this.starting = starting;
+    }
+
+    public Integer getFinal_price() {
+        return final_price;
+    }
+
+    public void setFinal_price(Integer final_price) {
+        this.final_price = final_price;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public Gem getGem() {
+        return gem;
+    }
+
+    public void setGem(Gem gem) {
+        this.gem = gem;
+    }
+
+    @Override
+    public String toString() {
+        return "Price{" +
+                "price_id=" + price_id +
+                ", starting=" + starting +
+                ", final_price=" + final_price +
+                ", currency='" + currency + '\'' +
+                '}';
+    }
+}
