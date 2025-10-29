@@ -1,10 +1,15 @@
 package ru.ciuse.hw_5_web.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 //import ru.ciuse.hw_5_web.any_repo.CRUDRepo;
+import ru.ciuse.hw_5_web.any_repo.OccurrenceRepo;
 import ru.ciuse.hw_5_web.model.Gem;
+import ru.ciuse.hw_5_web.model.Occurrence;
+
+import java.util.List;
 
 
 //@RestController
@@ -30,6 +35,9 @@ import ru.ciuse.hw_5_web.model.Gem;
 @RequestMapping("/test2")
 public class testREST {
 
+    @Autowired
+    OccurrenceRepo occurrenceRepo;
+
     @GetMapping("/gem")
     public Gem getGem() {
 
@@ -38,6 +46,16 @@ public class testREST {
         System.out.println(myTestGem);
 
         return myTestGem;
+
+    }
+
+    @GetMapping("/place")
+    public List<Occurrence> getPlaces() {
+
+        List<Occurrence> myPlace =  occurrenceRepo.findByMyCustomDate("01.01.2000");
+
+        return myPlace;
+
 
     }
 }
