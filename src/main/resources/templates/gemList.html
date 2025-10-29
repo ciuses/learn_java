@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gem List</title>
+</head>
+<body>
+<h1>User List</h1>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+    </tr>
+    <tr th:each="gem : ${gems}">
+        <td th:text="${gem.name}"></td>
+        <td th:text="${gem.type}"></td>
+    </tr>
+</table>
+</body>
+</html>
